@@ -1,5 +1,7 @@
 <?php
 
+namespace Beck24\Contact;
+
 elgg_make_sticky_form('contact');
 
 $email = get_input('email');
@@ -22,7 +24,7 @@ elgg_clear_sticky_form('contact');
 $message = elgg_echo('contact:from', array($email)) . $message;
 
 // get our admin-defined recipients
-$recipient_list = elgg_get_plugin_setting('recipients', 'contact');
+$recipient_list = elgg_get_plugin_setting('recipients', PLUGIN_ID);
 
 $recipient_array = explode("\n", $recipient_list);
 
