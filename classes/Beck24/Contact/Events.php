@@ -55,9 +55,6 @@ class Events {
 		
 		elgg_register_action('contact/email', PLUGIN_DIR . '/actions/send.php', 'public');
     
-	    // register early hook to set sticky form
-    	elgg_register_plugin_hook_handler('action', 'contact/email', 'contact_email_action', 0);
-    
 	    // Register contact page as public page for walled-garden
 	    elgg_register_plugin_hook_handler('public_pages', 'walled_garden', [$plugin->hooks(), 'publicPages']);
     
